@@ -1,7 +1,12 @@
 import React from 'react/addons';
 import Debug from 'debug';
+import Flux from 'flux';
+
+import Actions from './actions';
+import Store from './store';
 
 import AppRoot from './components/AppRoot';
+import {CHANGE} from './const';
 
 var debug = Debug('myApp');
 
@@ -15,9 +20,19 @@ class App {
    * @param {Object} options
    */
   constructor(options) {
+    var _this = this;
+
     debug('create app with options', options);
 
-    this.state = options.state;
+    var dispatcher = new Flux.Dispatcher();
+
+    _this.store = new Store(dispatcher, options.state);
+    _this.actions = new Actions(dispatcher, _this.store);
+    _this.element = null;
+
+    _this.store.on(CHANGE, function () {
+      _this.render();
+    });
   }
 
   /*
@@ -26,23 +41,25 @@ class App {
    * @returns {String|undefined}
    */
    render (element) {
+    var state = this.store.getState();
 
-    debug('render app with state', this.state);
+    this.element = element || this.element;
 
     // would be in JSX: <AppRoot state={this.state} />
     var appRootElement = React.createElement(AppRoot, {
-      state: this.state
+      actions: this.actions,
+      state: state
     });
 
     // render to DOM
-    if(element) {
-      debug('render to DOM');
-      React.render(appRootElement, element);
+    if (this.element) {
+      debug('render to DOM with state', state.toJS());
+      React.render(appRootElement, this.element);
       return;
     }
 
     // render to string
-    debug('render to string');
+    debug('render to string with state', state.toJS());
     return React.renderToString(appRootElement);
   }
 
@@ -64,6 +81,14 @@ class App {
    */
    renderToString () {
     return this.render();
+  }
+
+  /*
+   * @method getState
+   * @returns {Immutable.map}
+   */
+   getState () {
+    return this.store.state;
   }
 }
 

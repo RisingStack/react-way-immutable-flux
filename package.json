@@ -29,7 +29,10 @@
     "babel": "^5.0.12",
     "babel-core": "^5.0.12",
     "babel-loader": "^5.0.0",
+    "flux": "^2.0.3",
+    "immutable": "^3.7.2",
     "jest-cli": "^0.4.0",
+    "lodash": "^3.8.0",
     "webpack": "^1.8.4"
   },
   "jest": {

@@ -1,10 +1,14 @@
 import React from 'react/addons';
+import Component from './Component';
+import Debug from 'debug';
+
+var debug = Debug('myApp');
 
 /*
  * @class Item
  * @extends React.Component
  */
-class Item extends React.Component {
+class Item extends Component {
 
   /*
    * @method shouldComponentUpdate
@@ -19,7 +23,11 @@ class Item extends React.Component {
    * @returns {JSX}
    */
   render () {
-    return <li className="item">{this.props.item.title} - ${this.props.item.price}</li>;
+    var item = this.props.item;
+
+    debug('render <Item/>', item.get('title'));
+
+    return <li className="item">{item.get('title')} - ${item.get('price')}</li>;
   }
 }
 

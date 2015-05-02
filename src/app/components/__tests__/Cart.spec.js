@@ -1,11 +1,12 @@
 jest.dontMock('../Cart');
 
 import React from 'react/addons';
+import Immutable from 'immutable';
 import Cart from '../Cart';
 import Item from '../Item';
 
 var TestUtils = React.addons.TestUtils;
-var cartProp = {
+var cartProp = Immutable.fromJS({
   title: 'My Cart',
   items: [
     {
@@ -21,7 +22,7 @@ var cartProp = {
       price: 33
     }
   ]
-};
+});
 
 describe('Cart', () => {
 
@@ -36,7 +37,7 @@ describe('Cart', () => {
     expect(title.getDOMNode().textContent).toEqual('My Cart');
     expect(items.length).toBe(3);
     expect(items[0].props).toEqual({
-      item: cartProp.items[0]
+      item: cartProp.getIn(['items', 0])
     });
   });
 });

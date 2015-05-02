@@ -1,13 +1,14 @@
 jest.dontMock('../Item');
 
 import React from 'react/addons';
+import Immutable from 'immutable';
 import Item from '../Item';
 
 var TestUtils = React.addons.TestUtils;
-var itemProp = {
+var itemProp = Immutable.fromJS({
   title: 'Item 1',
   price: 12
-};
+});
 
 describe('Item', () => {
 

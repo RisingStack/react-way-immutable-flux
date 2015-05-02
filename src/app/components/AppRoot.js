@@ -1,7 +1,12 @@
+import {Map} from 'immutable';
 import React from 'react/addons';
+import Debug from 'debug';
 import Cart from './Cart';
+import Component from './Component';
 
 import config from '../../../config/app';
+
+var debug = Debug('myApp');
 
 /*
  * @class AppRoot
@@ -23,21 +28,38 @@ class AppRoot extends React.Component {
     return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
   }
 
+    /*
+   * @method getChildContext
+   * @returns {Object} childContext
+   */
+  getChildContext () {
+
+    // share only actions with childs
+    return {
+      actions: this.props.actions
+    };
+  }
+
   /*
    * @method render
    * @returns {JSX}
    */
   render () {
+    debug('render <AppRoot/>');
+
     return <div className="appRoot">
       <h1>{config.title}</h1>
-      <Cart cart={this.props.state.cart} />
+      <Cart cart={this.props.state.get('cart')} />
     </div>;
   }
 }
 
+// Context types validation
+AppRoot.childContextTypes = Component.contextTypes;
+
 // Prop types validation
 AppRoot.propTypes = {
-  state: React.PropTypes.object.isRequired,
+  state: React.PropTypes.instanceOf(Map).isRequired,
 };
 
 export default AppRoot;

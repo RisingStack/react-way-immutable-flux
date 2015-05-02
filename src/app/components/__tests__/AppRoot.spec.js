@@ -1,11 +1,12 @@
 jest.dontMock('../AppRoot');
 
 import React from 'react/addons';
+import Immutable from 'immutable';
 import AppRoot from '../AppRoot';
 import Cart from '../Cart';
 
 var TestUtils = React.addons.TestUtils;
-var state = {
+var state = Immutable.fromJS({
   cart: {
     title: 'My Cart',
     items: [
@@ -23,7 +24,7 @@ var state = {
       }
     ]
   }
-};
+});
 
 describe('AppRoot', () => {
 
@@ -38,7 +39,7 @@ describe('AppRoot', () => {
     expect(title.getDOMNode().textContent).toEqual('My React App');
     expect(carts.length).toBe(1);
     expect(carts[0].props).toEqual({
-      cart: state.cart
+      cart: state.get('cart')
     });
   });
 });
