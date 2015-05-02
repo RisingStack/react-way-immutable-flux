@@ -1,6 +1,6 @@
 # The React.js Way: architecture and top-down rendering
 
-[![Build Status](https://travis-ci.org/RisingStack/react-way-getting-started.svg?branch=master)](https://travis-ci.org/RisingStack/react-way-getting-started)  
+[![Build Status](https://travis-ci.org/RisingStack/react-way-immutable-flux.svg)](https://travis-ci.org/RisingStack/react-way-immutable-flux)  
 
 **Related blog post:**  
 **// TODO**
