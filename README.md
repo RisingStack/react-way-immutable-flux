@@ -1,16 +1,18 @@
-# The React Way: Getting Started
+# The React.js Way: architecture and top-down rendering
 
 [![Build Status](https://travis-ci.org/RisingStack/react-way-getting-started.svg?branch=master)](https://travis-ci.org/RisingStack/react-way-getting-started)  
 
 **Related blog post:**  
-http://blog.risingstack.com/the-react-way-getting-started-tutorial/
+**// TODO**
 
-Getting started with React and ES6
+Getting started with React, Flux and Immutable.js
 
 Used technologies:  
 
 - React
 - ES6
+- Flux
+- Immutable.js
 - Webpack
 - Babel
 - Jest
@@ -36,4 +38,4 @@ Run:
 
 ## Preview
 
-![screen shot 2015-04-11 at 11 48 41](https://cloud.githubusercontent.com/assets/1764512/7101012/cf4334fc-e040-11e4-9f28-aed24d68e46a.png)
+![React.js app preview](https://cloud.githubusercontent.com/assets/1764512/7440955/c94bed90-f0d1-11e4-929b-272c779705f0.png)
