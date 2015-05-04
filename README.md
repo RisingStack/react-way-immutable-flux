@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/RisingStack/react-way-immutable-flux.svg)](https://travis-ci.org/RisingStack/react-way-immutable-flux)  
 
 **Related blog post:**  
-**// TODO**
+http://blog.risingstack.com/the-react-js-way-flux-architecture-with-immutable-js/
 
-Getting started with React, Flux and Immutable.js
+The React.js Way: Flux Architecture with Immutable.js
 
 Used technologies:  
 
