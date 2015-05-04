@@ -1,4 +1,4 @@
-# The React.js Way: architecture and top-down rendering
+# The React.js Way: Flux Architecture with Immutable.js
 
 [![Build Status](https://travis-ci.org/RisingStack/react-way-immutable-flux.svg)](https://travis-ci.org/RisingStack/react-way-immutable-flux)  
 
