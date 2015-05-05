@@ -1,3 +1,4 @@
+import {Map} from 'immutable';
 import React from 'react/addons';
 import Component from './Component';
 import Debug from 'debug';
@@ -33,7 +34,7 @@ class Item extends Component {
 
 // Prop types validation
 Item.propTypes = {
-  item: React.PropTypes.object.isRequired,
+  item: React.PropTypes.instanceOf(Map).isRequired
 };
 
 export default Item;

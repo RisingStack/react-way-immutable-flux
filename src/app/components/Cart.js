@@ -1,3 +1,4 @@
+import {Map} from 'immutable';
 import React from 'react/addons';
 import Debug from 'debug';
 import Component from './Component';
@@ -56,7 +57,7 @@ class Cart extends Component {
 
 // Prop types validation
 Cart.propTypes = {
-  cart: React.PropTypes.object.isRequired,
+  cart: React.PropTypes.instanceOf(Map).isRequired
 };
 
 export default Cart;
