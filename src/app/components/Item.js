@@ -12,14 +12,6 @@ var debug = Debug('myApp');
 class Item extends Component {
 
   /*
-   * @method shouldComponentUpdate
-   * @returns {Boolean}
-   */
-  shouldComponentUpdate () {
-    return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
-  }
-
-  /*
    * @method render
    * @returns {JSX}
    */

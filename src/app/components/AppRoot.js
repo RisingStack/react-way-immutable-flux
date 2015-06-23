@@ -1,6 +1,7 @@
 import {Map} from 'immutable';
 import React from 'react/addons';
 import Debug from 'debug';
+import Actions from '../actions';
 import Cart from './Cart';
 import Component from './Component';
 
@@ -59,7 +60,8 @@ AppRoot.childContextTypes = Component.contextTypes;
 
 // Prop types validation
 AppRoot.propTypes = {
-  state: React.PropTypes.instanceOf(Map).isRequired,
+  actions: React.PropTypes.instanceOf(Actions).isRequired,
+  state: React.PropTypes.instanceOf(Map).isRequired
 };
 
 export default AppRoot;

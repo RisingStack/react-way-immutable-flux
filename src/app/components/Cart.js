@@ -13,14 +13,6 @@ var debug = Debug('myApp');
 class Cart extends Component {
 
   /*
-   * @method shouldComponentUpdate
-   * @returns {Boolean}
-   */
-  shouldComponentUpdate () {
-    return React.addons.PureRenderMixin.shouldComponentUpdate.apply(this, arguments);
-  }
-
-  /*
    * @method onItemAddClick
    */
   onItemAddClick () {
